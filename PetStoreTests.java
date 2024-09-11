@@ -19,7 +19,7 @@ public class PetStoreTests {
                 .body("status", equalTo("available"));
     }
 
-        @Test
+    @Test
     public void testGetNonExistentPet() {
             given()
             .when()
@@ -28,6 +28,8 @@ public class PetStoreTests {
                     .statusCode(404)
                     .body("message", equalTo("Pet not found"));
     }
+
+
     @Test
     public void testUpdatePet() {
         String requestBody = "{ \"id\": 1, \"name\": \"Doggie\", \"status\": \"sold\" }";
